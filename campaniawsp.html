@@ -1,0 +1,725 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="content-body py-0" id="principal-campana-whatsapp">
+        <div class="d-sm-flex align-items-center justify-content-between my-2">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb df-breadcrumbs m-0">
+                        <li class="breadcrumb-item">INICIO</li>
+                        <li class="breadcrumb-item">CANALES</li>
+                        <li class="breadcrumb-item active" aria-current="page">CAMPAÑAS</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="tx-right">
+                <!--data-toggle="modal" data-target="#modal-creacionextensiones-bot"-->
+                <button type="button" class="btn btn-xs pd-x-15  btn-white btn-uppercase mg-l-5"><i class="fas fa-redo-alt wd-10 mg-r-5"></i> Refrescar</button>
+                <button type="button" id="btn-abrirfiltrobusquedaoportunidades-oprt" class="btn btn-xs pd-x-15 btn-white btn-uppercase mg-l-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg> <span>Filtrar por Nombre</span> </button>
+                <button id="btn-crearnuevacampana-modal" class="btn btn-xs pd-x-15 btn-primary btn-uppercase mg-l-5"><i class="wd-10 mg-r-5" data-feather="plus"></i> Crear Campaña</button>
+            </div>
+        </div>
+    
+        <div class="card">
+            <table id="table-campanasmasivaswsp" class="table table-sm table-hover tx-13-f">
+                <thead>
+                    <tr>
+                        <th scope="row" class="bd-r-0-f"></th>
+                        <th scope="col" class="bd-l-0-f">Nombre Campaña</th>
+                        <th scope="col">Cantidad Contactos</th>
+                        <th scope="col">Nombre Plantilla</th>
+                        <th scope="col">Fecha y Hora Envio</th>
+                        <th scope="col">Fecha Creacion</th>
+                        <th scope="col">Ver Reporte</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <th scope="row" class="bd-r-0-f align-middle" data-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical" style="width: 18px; height: 18px;">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript: void(0);" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-off">
+                                        <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"></path>
+                                        <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Eliminar Campaña
+                                </a>
+                            </div>
+                        </th>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Campaña numero 1</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Saludo</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022  14:30hs </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <!--ejemplo2-->
+                    <tr>
+                        <th scope="row" class="bd-r-0-f align-middle" data-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical" style="width: 18px; height: 18px;">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript: void(0);" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-off">
+                                        <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"></path>
+                                        <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Eliminar Campaña
+                                </a>
+                            </div>
+                        </th>
+                        <td class="align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Campaña numero 2</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Saludo</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022  14:30hs </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <!--Ejemplo 3-->
+                    <tr>
+                        <th scope="row" class="bd-r-0-f align-middle" data-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical" style="width: 18px; height: 18px;">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript: void(0);" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-off">
+                                        <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"></path>
+                                        <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Eliminar Campaña
+                                </a>
+                            </div>
+                        </th>
+                        <td class="align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Campaña numero 3</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Saludo</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022  14:30hs </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <!--ejemplo 4-->
+                    <tr>
+                        <th scope="row" class="bd-r-0-f align-middle" data-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical" style="width: 18px; height: 18px;">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript: void(0);" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-off">
+                                        <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"></path>
+                                        <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Eliminar Campaña
+                                </a>
+                            </div>
+                        </th>
+                        <td class="align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Campaña numero 4</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Saludo</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022  14:30hs </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <!--ejemplo 5-->
+                    <tr>
+                        <th scope="row" class="bd-r-0-f align-middle row-cliente-opciones" data-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical" style="width: 18px; height: 18px;">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript: void(0);" class="dropdown-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield-off">
+                                        <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"></path>
+                                        <path d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Eliminar Campaña
+                                </a>
+                            </div>
+                        </th>
+                        <td class="align-items-center">
+                            <div class="d-flex align-items-center">
+                                <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Campaña numero 5</h6>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">Saludo</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022  14:30hs </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h6 class="tx-13 tx-inverse tx-semibold mg-b-0">10/10/2022 </h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <button type="button" class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+
+    <div id="contenedor-pasos-crearcampana" class="d-none">
+
+   
+        <div class="postion-relative d-flex" style=" height: calc(100vh - 60px)">
+            <div class="position-sticky p-4 border" style="top:0; width: 20%; min-width: 300px; background:white">
+                <header class="py-2">
+                    <button id="btn-back-campana-whatsapp" class="btn btn-sm p-0">
+                        <span> Volver al Listado</span>
+                    </button>
+                    <h3 class="pt-4" style="color: #214f7e"> Crear Campaña</h3>
+                </header>
+                <!--NavBar steps -->
+                <div>
+                    <ul class="steps steps-vertical pt-4" id="steps-campana-wp-creacion">
+                        <li class="step-item active">
+                            <a href="javascript:void(0)" class="step-link" onclick="GotoCampanaWpInit(1)">
+                                <span class="step-number ">1</span>
+                                <span class="step-title">Contactos</span>
+                            </a>
+                        </li>
+                        <li class="step-item">
+                            <a href="javascript:void(0)" class="step-link" onclick="GotoCampanaWpInit(2)">
+                                <span class="step-number">2</span>
+                                <span class="step-title">Plantillas</span>
+                            </a>
+                        </li>
+                        <li class="step-item">
+                            <a href="javascript:void(0)" class="step-link" onclick="GotoCampanaWpInit(3)">
+                                <span class="step-number">3</span>
+                                <span class="step-title">Programación</span>
+                            </a>
+                        </li>
+                        <li class="step-item">
+                            <a href="javascript:void(0)" class="step-link" onclick="GotoCampanaWpInit(4)">
+                                <span class="step-number">4</span>
+                                <span class="step-title">Revisión y Envío</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pt-5">
+                        <img id="img-container-steps" style="width:100%" src="~/Contents/img/img-campana-wsp.png">
+                    </div>
+                </div>
+            </div>
+    
+            <!--Contenido lado derecho-->
+            <div style="top:0; width: 80%">
+                <div class="h-100 contendor-todoslospasosdecreacion">
+                    <!--step 1- contacto-->
+                    <div class="h-100 container section-campana" id="campana-1">
+                        <div>
+                            <section class="card ">
+                                <div class="card-header py-3">
+                                    <h4 class="m-0 tx-gray-700"> Contactos</h4>
+                                </div>
+                                <div class="card-body pt-0 py-3">
+    
+                                    <div class="row mg-t-8">
+                                        <div class="col-md-6 mb-2">
+                                            <label class="label-control label-step1 mg-b-0" for="cbo-usuarioasignado-campanawsp">Usuario Asignado</label>
+                                            <select class="form-control form-control-sm selects-campana-1" id="cbo-usuarioasignado-campanawsp">
+                                                <option value="0">-- seleccionar una opción --</option>
+                                                @if (Model.ListadoUsuarios.Rows.Count > 0)
+                                                {
+                                                    for (int usu = 0; usu < Model.ListadoUsuarios.Rows.Count; usu++)
+                                                    {
+                                                        <option value="@Model.ListadoUsuarios.Rows[usu]["id"].ToString()">@Model.ListadoUsuarios.Rows[usu]["nombre"].ToString()</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label class="label-control label-step1 mr-1 " for="cbo-botreferenciacontactos-campanawsp" style="width : 90px">Canal</label>
+                                            <select class="form-control form-control-sm selects-campana-1" id="cbo-botreferenciacontactos-campanawsp">
+                                                <option value="0">-- Seleccionar una opción --</option>
+                                                @if (Model.ListadoBots.Rows.Count > 0)
+                                                {
+                                                    for (int bot = 0; bot < Model.ListadoBots.Rows.Count; bot++)
+                                                    {
+                                                        <option value="@Model.ListadoBots.Rows[bot]["apiKey"].ToString()">@Model.ListadoBots.Rows[bot]["nombreBot"].ToString()</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label class="label-control label-step1 mr-1" for="cbo-embudoventascontacto-campanawsp" style="width : 90px">Etapa</label>
+                                            <select class="form-control form-control-sm selects-campana-1" id="cbo-embudoventascontacto-campanawsp">
+                                                <option value="0">-- Seleccionar una opción --</option>
+                                                @if (Model.ListadoEmbudoVentas.Rows.Count > 0)
+                                                {
+                                                    for (int emb = 0; emb < Model.ListadoEmbudoVentas.Rows.Count; emb++)
+                                                    {
+                                                        <option value="@Model.ListadoEmbudoVentas.Rows[emb]["id"].ToString()">@Model.ListadoEmbudoVentas.Rows[emb]["descripcionEtapa"].ToString() (@Convert.ToDecimal(Model.ListadoEmbudoVentas.Rows[emb]["porcProbabilidad"]) %)</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label class="label-control label-step1 mr-1" for="cbo-plataformacontactos-campanawsp" style="width : 90px">Plataforma</label>
+                                            <select class="form-control form-control-sm selects-campana-1" id="cbo-plataformacontactos-campanawsp">
+                                                <option value="0">-- Seleccionar una opción --</option>
+                                                @if (Model.ListadoCanalesEntradas.Rows.Count > 0)
+                                                {
+                                                    for (int bot = 0; bot < Model.ListadoCanalesEntradas.Rows.Count; bot++)
+                                                    {
+                                                        <option value="@Model.ListadoCanalesEntradas.Rows[bot]["id"].ToString()">@Model.ListadoCanalesEntradas.Rows[bot]["nombre"].ToString()</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+    
+                                        <div class="col-md-6 mb-2">
+                                            <label class="label-control label-step1 mg-b-0 mr-1" for="cbo-segmentacioncontactos-campanawsp" style="width : 100px">Segmentación</label>
+                                            <select class="form-control form-control-sm selects-campana-1" id="cbo-segmentacioncontactos-campanawsp">
+                                                <option value="0">--seleccionar una opción--</option>
+                                                @if (Model.ListadoSegmentaciones.Rows.Count > 0)
+                                                {
+                                                    for (int seg = 0; seg < Model.ListadoSegmentaciones.Rows.Count; seg++)
+                                                    {
+                                                        <option value="@Model.ListadoSegmentaciones.Rows[seg]["id"].ToString()">@Model.ListadoSegmentaciones.Rows[seg]["nombre"].ToString()</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-end tx-gray-600 tx-20 m-0 py-4">
+                                    <p class="tx-gray-600 tx-20 pr-2">Total contactos: <span> 100</span></p>
+                                </div>
+                            </section>
+                        </div>
+    
+                        <footer class="py-3">
+                            <div>
+                                <div style="float:right">
+                                    <button onclick="GotoCampanaWpInit(2)" type="button" class="btn btn-primary">Siguiente&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </footer>
+    
+                    </div>
+                    <!--step 2- Plantillas-->
+                    <div class="h-100 container  section-campana d-none" id="campana-2">
+                        <div>
+                            <section class="card ">
+                                <div class="card-header py-3">
+                                    <h4 class="m-0 tx-gray-700"> Plantillas</h4>
+                                </div>
+                                <div class="card-body pb-3 pt-0">
+                                    <div class="row mg-t-8">
+                                        <div class="col-md-12 ">
+                                            <label class="label-control label-step2 mg-b-0" for="cbo-usuarioasignado-campanawsp">Seleccione una Plantilla</label>
+                                            <select class="form-control form-control-sm selects-campana-2" id="cbo-plantillas-campanawsp">
+                                                <option value="0">-- Seleccionar una opción --</option>
+                                                @if (Model.ListadoPlantillas.Rows.Count > 0)
+                                                {
+                                                    for (int pl = 0; pl < Model.ListadoPlantillas.Rows.Count; pl++)
+                                                    {
+                                                        <option data-idplantilla="@Model.ListadoPlantillas.Rows[pl]["id"].ToString()" value="@Model.ListadoPlantillas.Rows[pl]["codigo"].ToString()">@Model.ListadoPlantillas.Rows[pl]["codigo"].ToString()</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12 mt-4">
+                                            <label class="label-control label-step2 mg-b-0">Mensaje Plantilla</label>
+                                            <div class="border rounded p-3" id="txt-mensajeplantilla-campanawsp" style="font-size: 15px; padding-top: 10px; padding-bottom: 10px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-4">
+                                            <div id="panel-loadingvariablesplantilla-campanawsp" style="display: none; height: 100%; width: 96%; background: white; position: absolute; opacity: 0.6;"></div>
+                                            <table class="table table-sm table-hover tx-13-f" id="table-variablesplantilla-camapanwsp">
+                                                <tr><td style="text-align: center; font-size: 15px; color: #828c92">No hay variables a mostrar</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <footer class="py-3">
+                            <div>
+                                <div style="float:left">
+                                    <button onclick="GotoCampanaWpInit(1)" type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Anterior</button>
+                                </div>
+                                <div style="float:right">
+                                    <button onclick="GotoCampanaWpInit(3)" type="button" class="btn btn-primary">Siguiente&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <!--step 3 Programacion-->
+                    <div class="h-100 container  section-campana d-none" id="campana-3">
+                        <div>
+                            <section class="card ">
+                                <div class="card-header py-3">
+                                    <h4 class="m-0 tx-gray-700">Programación</h4>
+                                </div>
+                                <div class="card-body pb-3 pt-0">
+                                    <div class="row mg-t-8">
+                                        <div class="col-md-12">
+                                            <input type="radio" name="radiobutton-programacion" id="label-enviar-ahora">
+                                            <label class="label-control label-step label-step3 mg-b-0" for="label-enviar-ahora">Enviar Campaña ahora</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="radio" name="radiobutton-programacion" id="label-programar-envio">
+                                            <label class="label-control label-step label-step3 mg-b-0" for="label-programar-envio">Programar envio de Campaña </label>
+                                        </div>
+                                    </div>
+                                    <div class="row d-none" id="contenedor-fechayhora-envio-programado">
+                                        <div class="col-md-6">
+                                            <label class="label-control label-step label-step3 mg-b-0">Fecha Envio</label>
+                                            <input type="date" class="form-control form-control-sm selects-campana-3" placeholder="DD/MM/YYYY">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="label-control label-step label-step3 mg-b-0">Hora Envio</label>
+                                            <input type="time" class="form-control form-control-sm selects-campana-3" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <footer class="py-3">
+                            <div>
+                                <div style="float:left">
+                                    <button onclick="GotoCampanaWpInit(2)" type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Anterior</button>
+                                </div>
+                                <div style="float:right">
+                                    <button onclick="GotoCampanaWpInit(4)" type="button" class="btn btn-primary"><span>Revisar&nbsp;</span>
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></button>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                    <!--step 4 envio y revision-->
+                    <div class="h-100 container  section-campana d-none" id="campana-4">
+                        <div>
+                            <section class="card ">
+                                <div class="card-header py-3">
+                                    <h4 class="m-0 tx-gray-700">Revisión y Envío</h4>
+                                </div>
+                                <div class="card-body pb-3 pt-0">
+                                    <div class="row mg-t-8">
+                                        <div class="col-md-12">
+                                            <label class="label-control label-step label-step4 mg-b-0">Nombre :</label>
+                                            <span> Nombre Campaña</span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="label-control label-step label-step4 mg-b-0">Contactos Segmentados Por:</label>
+                                            <ul>
+                                                <li class="d-flex"><div style="width:120px">Asuario Asignado:</div> <span>3</span></li>
+                                                <li class="d-flex"><div style="width:120px">Segmentacion: </div><span>3</span></li>
+                                                <li class="d-flex"><div style="width:120px">Fase: </div><span>6</span></li>
+                                                <li class="d-flex"><div style="width:120px">Canal: </div><span>9</span></li>
+                                                <li class="d-flex"><div style="width:120px">Plataforma: </div><span>2</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="label-control label-step label-step4 mg-b-0">Total:</label> <span> 23</span>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="label-control label-step label-step4 mg-b-0">Plantilla:</label><span> Nombre plantilla</span>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="label-control label-step label-step4 mg-b-0">Fecha de envio:</label> <span> 27 de enero a las 19:23</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <footer class="py-3">
+                            <div>
+                                <div style="float:left">
+                                    <button onclick="GotoCampanaWpInit(3)" type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Anterior</button>
+                                </div>
+                                <div style="float:right">
+                                    <button type="button" class="btn btn-primary">
+                                        <span>Enviar&nbsp;</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+    
+                                    </button>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal para crear nueva Campaña-->
+<div class="modal fade effect-scale" id="modal-crearcampana-wsp" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <section class="modal-header">
+                <h6 class="tx-uppercase tx-spacing-1 tx-semibold tx-13 mb-0">CREAR CAMPAÑA</h6>
+                <button id="" type="button" class="close pos-absolute t-10 r-15" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i data-feather="x" class="wd-20"></i></span>
+                </button>
+            </section>
+            <div class="modal-body pd-20">
+                <section>
+                    <div class="mg-b-5 d-flex">
+                        <div class="col-md-4">
+                            <label class="label-control">Nombre Campaña</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control form-control-sm" placeholder="Ingrese el Nombre" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer pd-t-6 pd-b-6">
+                <button type="button" class="label-control btn btn-light btn-uppercase btn-sm m-0" data-dismiss="modal"> <span>Cancelar</span></button>
+                <button id="btn-comenzar-creacion-campanawsp" type="submit" class="btn btn-primary btn-uppercase btn-sm">
+                    <span> COMENZAR</span> <span class="spinner-border spinner-border-sm mg-l-5 d-none" role="status" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<style>
+    .selects-campana-1, .selects-campana-2, .selects-campana-3 {
+        color: #bec0c2;
+        height: 43px !important;
+        font-size: 14px !important;
+    }
+    .section-campana{
+        display: flex;
+        padding-top: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .step-number {
+        width: 45px;
+        height: 45px;
+    }
+
+    .step-title {
+        color: #828c92;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    #img-container-steps {
+        opacity: 0.6;
+    }
+
+    .steps-vertical .step-item + .step-item::before {
+        left: 22px;
+    }
+
+    .label-step1, .label-step2, .label-step3, .label-step4 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #828c92;
+    }
+
+    #campana-2 .table td {
+        border-top: 1px solid transparent !important;
+    }
+
+    #table-campanasmasivaswsp.table thead  td{
+        color: grey
+    }
+
+    #table-campanasmasivaswsp.table tbody td {
+        border-right: 1px solid transparent !important;
+        color: #828c92 !important;
+    }
+
+
+</style>
+<script src="js/campaniawsp.js"></script>
